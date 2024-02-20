@@ -1,3 +1,5 @@
+@import "../../app.scss";
+
 .home {
   height: calc(100vh - 100px);
   background: linear-gradient(180deg, #0c0c1d, #13133a);
@@ -17,6 +19,14 @@
       justify-content: center;
       gap: 40px;
 
+      @include mobile {
+        height: 50%;
+        width: 100%;
+        gap: 20px;
+        align-items: center;
+        text-align: center;
+      }
+
       h2 {
         font-size: 30px;
         color: rebeccapurple;
@@ -25,6 +35,10 @@
 
       h1 {
         font-size: 50px;
+      }
+
+      @include mobile {
+        font-size: 36px;
       }
     }
     .buttons {
@@ -60,6 +74,11 @@
   width: 24px;
   height: 24px;
   margin-left: 17%;
+
+  @include mobile {
+    margin-left: 0px;
+    justify-content: center;
+  }
 }
 
 .chevron {
