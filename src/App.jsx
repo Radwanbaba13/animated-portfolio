@@ -1,4 +1,5 @@
 import "./app.scss";
+import Home from "./components/Home/Home";
 import Navbar from "./components/Navbar/Navbar";
 
 const App = () => {
@@ -6,6 +7,7 @@ const App = () => {
     <div>
       <section id="Homepage">
         <Navbar />
+        <Home />
       </section>
       <section id="Portfolio">Portfolio</section>
       <section id="Education">Education</section>

@@ -1,14 +1,14 @@
 @import "../../app.scss";
 
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0); 
-    z-index: 998; 
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 998;
+}
 
 .sidebar {
   display: flex;
@@ -17,7 +17,7 @@
   justify-content: center;
   background-color: white;
   color: black;
-  
+
   .bg {
     z-index: 999;
     position: fixed;
@@ -26,8 +26,6 @@
     bottom: 0;
     width: 400px;
     background: white;
-
-
 
     .links {
       position: absolute;
