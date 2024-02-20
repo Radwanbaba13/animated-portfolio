@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import "./contact.scss";
 import { motion, useInView } from "framer-motion";
+import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from "@emailjs/browser";
 
 const variants = {
@@ -23,12 +24,53 @@ const Contact = () => {
   const formRef = useRef();
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [responseMessage, setResponseMessage] = useState("");
+
+  // Values for form captacha validation
+  const recaptchaRef = useRef(null);
+  const [captchaValue, setCaptchaValue] = useState(null);
+
+  const onCaptchaChange = (value) => {
+    setCaptchaValue(value);
+  };
 
   const isInView = useInView(ref, { margin: "-100px" });
 
-  const sendEmail = (e) => {
-    e.preventDefault();
+  // Email validation function
+  const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
 
+  const sendEmail = async (e) => {
+    e.preventDefault();
+    setError(false);
+    setSuccess(false);
+
+    // Form validation
+    const name = formRef.current.name.value.trim();
+    const email = formRef.current.email.value.trim();
+    const message = formRef.current.message.value.trim();
+
+    if (!name || !email || !message) {
+      setError(true);
+      setResponseMessage("All fields are required.");
+      return;
+    }
+
+    if (!validateEmail(email)) {
+      setError(true);
+      setResponseMessage("Please enter a valid email address.");
+      return;
+    }
+
+    if (!captchaValue) {
+      setError(true);
+      setResponseMessage("Please confirm that you are not a robot.");
+      return;
+    }
+
+    // Proceed with email sending
     emailjs
       .sendForm(
         "service_9eje13j",
@@ -38,10 +80,20 @@ const Contact = () => {
       )
       .then(
         (result) => {
+          setError(false);
           setSuccess(true);
+          setResponseMessage("Email sent successfully!");
+          recaptchaRef.current.reset();
+          setCaptchaValue(null);
+
+          // Reset form fields
+          formRef.current.name.value = "";
+          formRef.current.email.value = "";
+          formRef.current.message.value = "";
         },
         (error) => {
           setError(true);
+          setResponseMessage("Failed to send email. Please try again.");
         },
       );
   };
@@ -137,11 +189,19 @@ const Contact = () => {
           transition={{ delay: 3, duration: 1 }}
         >
           <input type="text" required placeholder="Name" name="name" />
-          <input type="email" required placeholder="Email" name="email" />
-          <textarea rows={8} placeholder="Message" name="message" />
+          <input type="text" required placeholder="Email" name="email" />
+          <textarea rows={6} required placeholder="Message" name="message" />
+          <div className="recaptcha-container">
+            <ReCAPTCHA
+              ref={recaptchaRef}
+              sitekey="6Lc4uXkpAAAAAG4ewuSjF-DN-UfRQM58Fn9AjRF8"
+              onChange={onCaptchaChange}
+            />
+          </div>
+
           <button>Submit</button>
-          {error && "Error"}
-          {success && "Success"}
+          {error && <div className="error">{responseMessage}</div>}
+          {success && <div className="success">{responseMessage}</div>}
         </motion.form>
       </div>
     </motion.div>
