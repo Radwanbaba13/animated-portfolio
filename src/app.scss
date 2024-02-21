@@ -1,3 +1,19 @@
+@mixin mobile {
+  @media (max-width: 738px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (max-width: 1366px) {
+    @content;
+  }
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -18,25 +34,16 @@ body {
 html {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+  overflow-y: scroll;
 }
 
 section {
   height: 100vh;
   scroll-snap-align: center;
-}
 
-@mixin mobile {
-  @media (max-width: 738px) {
-    @content;
-  }
-}
-@mixin tablet {
-  @media (max-width: 1024px) {
-    @content;
-  }
-}
-@mixin desktop {
-  @media (max-width: 1366px) {
-    @content;
+  @include mobile {
+    &#Contact {
+      scroll-snap-align: center;
+    }
   }
 }

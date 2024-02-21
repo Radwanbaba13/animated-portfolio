@@ -1,0 +1,114 @@
+@import "../../app.scss";
+
+.about {
+  background: linear-gradient(180deg, #13133a, #0c0c1d);
+
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .content {
+    text-align: center;
+    max-width: min(80%, 1366px);
+    color: white;
+    @include mobile {
+      margin-top: 55px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 36px;
+
+      @include mobile {
+        margin-bottom: 5px;
+        font-size: 24px;
+      }
+    }
+
+    p {
+      margin-bottom: 30px;
+      text-align: center;
+      @include mobile {
+        font-size: 16px;
+      }
+    }
+
+    .technologies {
+      margin-top: 40px;
+      justify-content: center;
+      text-align: center;
+      @include mobile {
+        font-size: 20px;
+        margin-top: 40px;
+      }
+
+      .category {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+
+        .category-name {
+          position: sticky;
+          margin-top: 5px;
+          font-size: 24px;
+          margin-right: 10px;
+          @include mobile {
+            font-size: 18px;
+            margin-top: 0px;
+          }
+        }
+
+        h2 {
+          font-size: 18px;
+          margin-bottom: 10px;
+        }
+
+        .tech-list {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 10px;
+          @include mobile {
+            gap: 5px;
+          }
+        }
+
+        .tech-item {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding: 8px;
+          background-color: rgba(105, 105, 105, 0.3);
+          border-radius: 10px;
+          border: 1px solid #929292;
+          margin-left: 5px;
+          @include mobile {
+            padding: 5px;
+          }
+
+          .tech-logo {
+            width: 25px;
+            height: 25px;
+            @include mobile {
+              width: 15px;
+              height: 15px;
+            }
+          }
+
+          .tech-name {
+            margin-left: 4px;
+            font-size: 16px;
+            @include mobile {
+              margin-left: 4px;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
