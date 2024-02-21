@@ -62,9 +62,12 @@
 
   .formContainer {
     flex: 1;
+    margin-top: 70px;
+    align-items: center;
     position: relative;
 
     @include mobile {
+      margin-top: -50px;
       padding: 50px;
       width: 100%;
     }
@@ -72,11 +75,12 @@
     .phoneSvg {
       stroke: #ffa500;
       position: absolute;
-      margin: auto;
+      margin-top: 40px;
       z-index: -1;
 
       @include mobile {
         svg {
+          margin-top: 0lvb;
           width: 300px;
           height: 450px;
         }

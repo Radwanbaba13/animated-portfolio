@@ -53,8 +53,14 @@ const Home = () => {
             Software Engineer and Web Developer
           </motion.h1>
           <motion.div variants={textVariants} className="buttons">
-            <motion.button variants={textVariants}>See my Work</motion.button>
-            <motion.button variants={textVariants}>Contact Me</motion.button>
+            <a href={"#Portfolio"}>
+              <motion.button variants={textVariants}>See my Work</motion.button>
+            </a>
+            <a href={"#Contact"}>
+              <motion.button variants={textVariants} className="secondary">
+                Contact Me
+              </motion.button>{" "}
+            </a>
           </motion.div>
           <div className="container">
             <div className="chevron"></div>
