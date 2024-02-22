@@ -20,3 +20,6 @@ export { default as jest } from "./jest-plain.svg";
 export { default as cypress } from "./cypress-original.svg";
 export { default as docker } from "./docker-original-wordmark.svg";
 export { default as amazonwebservices } from "./amazonwebservices-original-wordmark.svg";
+export { default as electron } from "./Electron_Software_Framework_Logo.svg";
+export { default as css } from "./CSS3_logo_and_wordmark.svg";
+export { default as storybook } from "./storybook-icon-svgrepo-com.svg";
