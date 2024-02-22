@@ -17,8 +17,6 @@ const Technology = ({ categoryName, techArray }) => {
     threshold: 0.1,
   });
 
-  const [hovered, setHovered] = useState("");
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -51,13 +49,11 @@ const Technology = ({ categoryName, techArray }) => {
     >
       <motion.div className="tech-list">
         <span className="category-name">{categoryName}</span>
-        {techArray.map((tech, index) => (
+        {techArray.map((tech) => (
           <motion.div
             key={tech.name}
             className="tech-item"
             variants={itemVariants}
-            onHoverStart={() => setHovered(categoryName)}
-            onHoverEnd={() => setHovered("")}
           >
             <img src={tech.logo} alt={tech.name} className="tech-logo" />
             <span className="tech-name">{tech.name}</span>
@@ -89,6 +85,20 @@ const About = () => {
       opacity: 1,
       transition: {
         duration: 1,
+      },
+    },
+  };
+
+  const sliderVariants = {
+    initial: {
+      x: 0,
+    },
+    animate: {
+      x: "-220%",
+      transition: {
+        repeat: Infinity,
+        repeatType: "mirror",
+        duration: 20,
       },
     },
   };
@@ -128,6 +138,14 @@ const About = () => {
           <Technology categoryName={"Testing"} techArray={testingFrameworks} />
           <Technology categoryName={"Tools"} techArray={tools} />
         </motion.div>
+      </motion.div>
+      <motion.div
+        className="slidingTextContainer"
+        variants={sliderVariants}
+        initial="initial"
+        animate="animate"
+      >
+        Web Developer
       </motion.div>
     </motion.div>
   );

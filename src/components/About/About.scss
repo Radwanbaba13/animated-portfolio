@@ -111,4 +111,19 @@
       }
     }
   }
+  .slidingTextContainer {
+    position: absolute;
+    opacity: 0.8;
+    font-size: 50vh;
+    bottom: 100px;
+    white-space: nowrap;
+    color: #ffffff09;
+    width: 50%;
+    rotate: -25deg;
+    font-weight: bold;
+    user-select: none;
+    @include mobile {
+      opacity: 1;
+    }
+  }
 }
