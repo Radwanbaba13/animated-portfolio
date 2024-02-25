@@ -145,7 +145,11 @@ const About = () => {
         initial="initial"
         animate="animate"
       >
-        Web Developer
+        <div className="top">
+          {" "}
+          App Innovator <br />
+        </div>
+        <div className="bottom">Web Developer</div>
       </motion.div>
     </motion.div>
   );

@@ -114,8 +114,6 @@
   .slidingTextContainer {
     position: absolute;
     opacity: 0.8;
-    font-size: 50vh;
-    bottom: 100px;
     white-space: nowrap;
     color: #ffffff09;
     width: 50%;
@@ -124,6 +122,16 @@
     user-select: none;
     @include mobile {
       opacity: 1;
+    }
+
+    .top {
+      font-size: 20vh;
+      margin-left: 500px;
+      bottom: 0px;
+    }
+    .bottom {
+      font-size: 50vh;
+      bottom: 100px;
     }
   }
 }
