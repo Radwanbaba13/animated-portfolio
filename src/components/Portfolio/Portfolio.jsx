@@ -4,6 +4,7 @@ import "./portfolio.scss";
 import * as svgs from "../../Assets/Logos/index";
 import BOD from "../../Assets/Images/BOD.png";
 import Awaazo from "../../Assets/Images/Awaazo.png";
+import UI_Kit from "../../Assets/Images/UI_Kit.png";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
 const items = [
@@ -38,7 +39,7 @@ const items = [
   {
     id: 3,
     title: "React UI Kit",
-    img: "https://images.pexels.com/photos/6894528/pexels-photo-6894528.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+    img: UI_Kit,
     desc: "The 'React_UI_Kit' repository is an extensive library of React components and widgets, crafted to facilitate the development of modern and responsive user interfaces. This collection leverages the full potential of React and JavaScript, complemented by Storybook for component visualization and CSS for styling, offering a versatile toolkit for UI development.",
     link: {
       text: "https://github.com/Radwanbaba13/React_UI_Kit",
