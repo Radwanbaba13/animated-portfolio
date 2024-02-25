@@ -13,7 +13,7 @@ const App = () => {
         <Navbar />
         <Home />
       </section>
-      <section id="About">
+      <section id="Skills & About">
         <About />
       </section>
       <section id="Portfolio">

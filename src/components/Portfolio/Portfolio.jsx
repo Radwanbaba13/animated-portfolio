@@ -2,14 +2,16 @@ import { useRef } from "react";
 import "./portfolio.scss";
 
 import * as svgs from "../../Assets/Logos/index";
+import BOD from "../../Assets/Images/BOD.png";
+import Awaazo from "../../Assets/Images/Awaazo.png";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
 const items = [
   {
     id: 1,
     title: "Awaazo",
-    img: "https://images.pexels.com/photos/18073372/pexels-photo-18073372/free-photo-of-young-man-sitting-in-a-car-on-a-night-street.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
+    img: Awaazo,
+    desc: "Led the frontend team in developing 'Awaazo', an innovative AI-powered podcasting platform, utilizing Next.js and React. Oversaw task management, enhanced team coordination, and ensured effective communication. Focused on guiding the team in creating an engaging user interface while maintaining high coding standards.",
     link: { text: "https://alpha.awaazo.com", message: "Visit Website" },
     techStack: [
       { name: "Next.js", logo: svgs.nextjs },
@@ -22,8 +24,8 @@ const items = [
   {
     id: 2,
     title: "Business Operations Dashboard",
-    img: "https://images.pexels.com/photos/18023772/pexels-photo-18023772/free-photo-of-close-up-of-a-person-holding-a-wristwatch.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
+    img: BOD,
+    desc: "Developed a business management application for TreeKeepers Inc., an outdoor service company based in Montréal, utilizing Electron.js, React.js, and Node.js. Focused on creating client management tools, calendar and task functionalities, and an automated quotation system, enhancing qutation system efficiency by 400%.",
     link: null,
     techStack: [
       { name: "Electron.js", logo: svgs.electron },
@@ -37,7 +39,7 @@ const items = [
     id: 3,
     title: "React UI Kit",
     img: "https://images.pexels.com/photos/6894528/pexels-photo-6894528.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
+    desc: "The 'React_UI_Kit' repository is an extensive library of React components and widgets, crafted to facilitate the development of modern and responsive user interfaces. This collection leverages the full potential of React and JavaScript, complemented by Storybook for component visualization and CSS for styling, offering a versatile toolkit for UI development.",
     link: {
       text: "https://github.com/Radwanbaba13/React_UI_Kit",
       message: "Visit Github Repo",
