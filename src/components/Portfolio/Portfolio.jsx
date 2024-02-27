@@ -5,6 +5,7 @@ import * as svgs from "../../Assets/Logos/index";
 import BOD from "../../Assets/Images/BOD.png";
 import Awaazo from "../../Assets/Images/Awaazo.png";
 import UI_Kit from "../../Assets/Images/UI_Kit.png";
+import { isMobile } from "react-device-detect";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
 const items = [
@@ -54,12 +55,6 @@ const items = [
   },
 ];
 
-const isMobile = () => {
-  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent,
-  );
-};
-
 const Single = ({ item }) => {
   const ref = useRef();
 
@@ -81,7 +76,7 @@ const Single = ({ item }) => {
   };
 
   // Determine if the item's ID is odd or even
-  const isItemOdd = isMobile() ? true : item.id % 2 !== 0;
+  const isItemOdd = isMobile ? true : item.id % 2 !== 0;
 
   return (
     <section>
