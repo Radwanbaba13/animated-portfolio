@@ -99,4 +99,16 @@ export const tools = [
     name: "AWS",
     logo: svgs.amazonwebservices,
   },
+  {
+    name: "Git",
+    logo: svgs.git,
+  },
+  {
+    name: "Github",
+    logo: svgs.github,
+  },
+  {
+    name: "Figma",
+    logo: svgs.figma,
+  },
 ];

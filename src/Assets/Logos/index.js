@@ -23,3 +23,6 @@ export { default as amazonwebservices } from "./amazonwebservices-original-wordm
 export { default as electron } from "./Electron_Software_Framework_Logo.svg";
 export { default as css } from "./CSS3_logo_and_wordmark.svg";
 export { default as storybook } from "./storybook-icon-svgrepo-com.svg";
+export { default as git } from "./git-icon-logo.svg";
+export { default as github } from "./github.svg";
+export { default as figma } from "./figma.svg";
