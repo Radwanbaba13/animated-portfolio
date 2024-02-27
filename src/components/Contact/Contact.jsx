@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import "./contact.scss";
-import { AnimatePresence, motion, useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from "@emailjs/browser";
 
@@ -179,7 +179,7 @@ const Contact = () => {
             animate={{ opacity: 0 }}
             transition={{ delay: 2, duration: 1 }}
           >
-            <svg width="500px" height="650px" viewBox="0 0 80 120">
+            <svg width="500px" height="700px" viewBox="0 0 80 120">
               <motion.path
                 strokeWidth={0.5}
                 fill="none"

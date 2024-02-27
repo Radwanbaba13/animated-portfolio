@@ -18,7 +18,7 @@ const Parallax = () => {
       className="parallax"
       ref={ref}
       style={{
-        background: "linear-gradient(180deg, #111132, #0c0c1d)",
+        background: "linear-gradient(180deg, #0c0c1d, #111132)",
       }}
     >
       <motion.h1 style={{ y: yText }}>My Work</motion.h1>

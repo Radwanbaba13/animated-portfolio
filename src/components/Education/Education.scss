@@ -1,3 +1,5 @@
+@import "../../app.scss";
+
 .education {
   background: linear-gradient(180deg, #0c0c1d, #13133a);
   height: 100vh;
@@ -19,6 +21,15 @@
     left: 50%;
     transform: translate(-50%, -50%);
     animation: reveal 8s ease forwards;
+
+    @include mobile {
+      transform: translate(-125%, -50%) rotate(90deg);
+      scale: 0.5;
+    }
+    @include tablet {
+      transform: translate(-125%, -50%) rotate(90deg);
+      scale: 0.5;
+    }
   }
 
   .education-timeline {
@@ -32,6 +43,18 @@
         top: calc(50% - 150px);
         left: min(calc(0% + (100vw - 1366px) / 2), calc(80vw - 30px));
         z-index: 1;
+        @include mobile {
+          width: 400px;
+          top: 15%;
+          left: 8%;
+          scale: 0.6;
+        }
+        @include tablet {
+          width: 400px;
+          top: 25%;
+          left: 30%;
+          scale: 0.6;
+        }
       }
 
       .point2 {
@@ -40,12 +63,36 @@
         left: 50%;
         transform: translateX(-50%);
         z-index: 1;
+        @include mobile {
+          width: 400px;
+          top: 45%;
+          left: 35%;
+          scale: 0.6;
+        }
+        @include tablet {
+          width: 400px;
+          top: 45%;
+          left: 45%;
+          scale: 0.6;
+        }
       }
       .point3 {
         position: absolute;
         top: calc(50% - 120px);
         right: min(calc(0% + (100vw - 1366px) / 2), calc(80vw - 30px));
         z-index: 1;
+        @include mobile {
+          width: 400px;
+          top: 80%;
+          right: -5%;
+          scale: 0.6;
+        }
+        @include tablet {
+          width: 400px;
+          top: 75%;
+          right: 22%;
+          scale: 0.6;
+        }
       }
 
       .date-location {

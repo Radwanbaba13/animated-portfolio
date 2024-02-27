@@ -1,5 +1,4 @@
 import "./About.scss";
-import { useState } from "react";
 import {
   languages,
   frameworks,
