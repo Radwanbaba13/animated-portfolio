@@ -11,20 +11,18 @@ import {
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-const Technology = ({ categoryName, techArray }) => {
+const Technology = ({ categoryName, techArray, index }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
 
   const containerVariants = {
-    hidden: { opacity: 0 },
+    hidden: { x: 300, opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        staggerDirection: -1,
-      },
+      x: 0,
+      transition: { duration: 1, delay: index + 2 },
     },
   };
 
@@ -72,7 +70,7 @@ const About = () => {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 2.5,
+        duration: 2,
       },
     },
   };
@@ -127,16 +125,37 @@ const About = () => {
         </motion.p>
         <motion.div
           className="technologies"
-          variants={textVariants}
           animate={inView ? "visible" : "hidden"}
         >
           <motion.h1 variants={textVariants}>Skills</motion.h1>
-          <Technology categoryName={"Languages"} techArray={languages} />
-          <Technology categoryName={"Frameworks"} techArray={frameworks} />
-          <Technology categoryName={"Databases"} techArray={databases} />
-          <Technology categoryName={"AI/ML"} techArray={machineLearning} />
-          <Technology categoryName={"Testing"} techArray={testingFrameworks} />
-          <Technology categoryName={"Tools"} techArray={tools} />
+          <motion.div className="groups">
+            <Technology
+              categoryName={"Languages"}
+              techArray={languages}
+              index={1}
+            />{" "}
+            <Technology
+              categoryName={"Frameworks"}
+              techArray={frameworks}
+              index={2}
+            />
+            <Technology categoryName={"Tools"} techArray={tools} index={3} />{" "}
+            <Technology
+              categoryName={"Databases"}
+              techArray={databases}
+              index={4}
+            />
+            <Technology
+              categoryName={"AI/ML"}
+              techArray={machineLearning}
+              index={5}
+            />
+            <Technology
+              categoryName={"Testing"}
+              techArray={testingFrameworks}
+              index={6}
+            />
+          </motion.div>
         </motion.div>
       </motion.div>
       <motion.div

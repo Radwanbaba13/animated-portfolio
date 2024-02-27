@@ -26,7 +26,7 @@ const items = [
     id: 2,
     title: "Business Operations Dashboard",
     img: BOD,
-    desc: "Developed a business management application for TreeKeepers Inc., an outdoor service company based in Montréal, utilizing Electron.js, React.js, and Node.js. Focused on creating client management tools, calendar and task functionalities, and an automated quotation system, enhancing qutation system efficiency by 400%.",
+    desc: "Developed a business management application for TreeKeepers Inc., an outdoor service company based in Montréal, utilizing Electron.js, React.js, and Node.js. Focused on creating client management tools, calendar and task functionalities, and an automated quotation process significantly improving the efficiency of generating quotes, boosting it by 400%.",
     link: null,
     techStack: [
       { name: "Electron.js", logo: svgs.electron },
@@ -54,6 +54,12 @@ const items = [
   },
 ];
 
+const isMobile = () => {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent,
+  );
+};
+
 const Single = ({ item }) => {
   const ref = useRef();
 
@@ -75,7 +81,7 @@ const Single = ({ item }) => {
   };
 
   // Determine if the item's ID is odd or even
-  const isItemOdd = item.id % 2 !== 0;
+  const isItemOdd = isMobile() ? true : item.id % 2 !== 0;
 
   return (
     <section>

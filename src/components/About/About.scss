@@ -44,67 +44,105 @@
         font-size: 20px;
         margin-top: 40px;
       }
-
-      .category {
+      .groups {
         display: flex;
-        align-items: center;
+        flex-wrap: wrap;
         justify-content: center;
-        margin-bottom: 20px;
-
-        .category-name {
-          position: sticky;
-          margin-top: 5px;
-          font-size: 24px;
-          margin-right: 10px;
-          @include mobile {
-            font-size: 18px;
-            margin-top: 0px;
-          }
-        }
-
-        h2 {
-          font-size: 18px;
-          margin-bottom: 10px;
-        }
-
-        .tech-list {
-          display: flex;
-          flex-wrap: wrap;
+        gap: 20px;
+        @include mobile {
+          display: grid;
+          flex-wrap: nowrap;
           justify-content: center;
           gap: 10px;
-          @include mobile {
-            gap: 5px;
-          }
         }
 
-        .tech-item {
+        .category {
           display: flex;
-          flex-direction: row;
+          width: 350px;
           align-items: center;
-          padding: 8px;
-          background-color: rgba(105, 105, 105, 0.3);
-          border-radius: 10px;
+          justify-content: center;
+          align-items: flex-start;
+          padding: 15px;
+          margin-bottom: 10px;
+          background-color: rgba(105, 105, 105, 0.2);
+          border-radius: 20px;
           border: 1px solid #929292;
-          margin-left: 5px;
+
           @include mobile {
-            padding: 5px;
+            padding: 0px;
+            margin-bottom: 5px;
+            background-color: rgba(105, 105, 105, 0);
+            border-radius: 0px;
+            border: none;
+            width: 375px;
           }
 
-          .tech-logo {
-            width: 25px;
-            height: 25px;
+          .category-name {
+            position: sticky;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            align-self: flex-start;
+            width: 100%;
+
             @include mobile {
-              width: 15px;
-              height: 15px;
+              width: auto;
+              font-size: 18px;
+              margin-top: 0px;
+              margin-bottom: 0px;
+              font-weight: normal;
             }
           }
 
-          .tech-name {
-            margin-left: 4px;
-            font-size: 16px;
+          h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+          }
+
+          .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 4px;
+
             @include mobile {
+              gap: 2px;
+            }
+          }
+
+          .tech-item {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 8px;
+            background-color: rgba(105, 105, 105, 0);
+            border-radius: 10px;
+            border: 1px solid #929292;
+            margin-bottom: 5px;
+            margin-left: 5px;
+            @include mobile {
+              padding: 5px;
+              margin-bottom: 2px;
+            }
+
+            .tech-logo {
+              width: 25px;
+              height: 25px;
+              @include mobile {
+                width: 15px;
+                height: 15px;
+              }
+            }
+
+            .tech-name {
               margin-left: 4px;
-              font-size: 12px;
+              font-size: 16px;
+              @include mobile {
+                margin-left: 4px;
+                font-size: 12px;
+              }
             }
           }
         }
