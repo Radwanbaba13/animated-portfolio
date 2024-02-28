@@ -15,12 +15,6 @@ const Parallax = () => {
   const textOpacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
   const textScale = useTransform(scrollYProgress, [0, 1], [1, 0.1]);
 
-  // Triangle Bg Transformation
-  const bgRotate1 = useTransform(scrollYProgress, [0, 1], [0, 180]);
-
-  // Circle Bg Transformation
-  const bgRotate2 = useTransform(scrollYProgress, [0, 1], [0, -180]);
-
   // Constant rotation animation for backgrounds
   const rotateAnimation = {
     rotate: [0, 360],
@@ -55,13 +49,8 @@ const Parallax = () => {
       <motion.h1 style={{ y: yText, opacity: textOpacity, scale: textScale }}>
         My Work
       </motion.h1>
+      <motion.div className="circles" animate={rotateAnimation}></motion.div>
       <motion.div
-        style={{ rotate: bgRotate2 }}
-        className="circles"
-        animate={rotateAnimation}
-      ></motion.div>
-      <motion.div
-        style={{ rotate: bgRotate1 }}
         className="triangles"
         animate={{ ...rotateAnimation, rotate: [0, -360] }}
       ></motion.div>

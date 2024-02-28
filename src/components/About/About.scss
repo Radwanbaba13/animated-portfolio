@@ -9,13 +9,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @include mobile {
+    height: 120vh;
+  }
 
   .content {
     text-align: center;
     max-width: min(80%, 1366px);
     color: white;
     @include mobile {
-      margin-top: 55px;
+      margin-top: -100px;
     }
 
     h1 {

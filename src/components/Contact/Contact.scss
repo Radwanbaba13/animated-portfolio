@@ -10,6 +10,9 @@
   height: 100%;
   overflow: hidden;
   background: linear-gradient(180deg, #13133a, #0c0c1d);
+  @include mobile {
+    height: 120vh;
+  }
 
   .content {
     margin: auto;
@@ -162,7 +165,7 @@
           border: none;
           background-color: orange;
           cursor: pointer;
-          font-weight: 500;
+          font-weight: 550;
 
           @include mobile {
             padding: 10px;

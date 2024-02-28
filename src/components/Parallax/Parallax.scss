@@ -50,7 +50,13 @@
     height: 100%;
     position: absolute;
     z-index: 2;
+    @include mobile {
+      top: 0;
+      background-size: contain;
+      scale: 3;
+    }
   }
+
   .triangles {
     background-image: url("/parallax-0.png");
     top: 15%;
@@ -61,5 +67,10 @@
     height: 100%;
     position: absolute;
     z-index: 1;
+    @include mobile {
+      top: 0;
+      background-size: contain;
+      scale: 3;
+    }
   }
 }

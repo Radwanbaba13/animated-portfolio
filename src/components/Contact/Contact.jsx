@@ -33,6 +33,17 @@ const Contact = () => {
     setCaptchaValue(value);
   };
 
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.5,
+  });
+
+  const formRef = useRef();
+  const inFormView = useInView(ref, {
+    triggerOnce: false,
+    threshold: 0.5,
+  });
+
   // Email validation function
   const validateEmail = (email) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -40,6 +51,7 @@ const Contact = () => {
   };
 
   const sendEmail = async (e) => {
+    console.log(formRef.current);
     e.preventDefault();
     setError(false);
     setSuccess(false);
@@ -48,6 +60,7 @@ const Contact = () => {
     const name = formRef.current.name.value.trim();
     const email = formRef.current.email.value.trim();
     const message = formRef.current.message.value.trim();
+    name;
 
     if (!name || !email || !message) {
       setError(true);
@@ -104,16 +117,6 @@ const Contact = () => {
     },
   };
 
-  const [ref, inView] = useInView({
-    triggerOnce: false,
-    threshold: 0.5,
-  });
-
-  const [formRef, inFormView] = useInView({
-    triggerOnce: false,
-    threshold: 0.5,
-  });
-
   return (
     <motion.div className="contact">
       <motion.div
@@ -123,7 +126,7 @@ const Contact = () => {
         whileInView="animate"
         ref={ref}
       >
-        <motion.div className="textContainer" variants={variants} ref={formRef}>
+        <motion.div className="textContainer" variants={variants}>
           <motion.h1 variants={variants}>Contact Me</motion.h1>
           <motion.div className="item" variants={variants}>
             <h2>Mail</h2>
@@ -200,12 +203,14 @@ const Contact = () => {
               </svg>
             </motion.div>
           )}
+
           {inFormView && (
             <motion.form
               onSubmit={sendEmail}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 4, duration: 1 }}
+              ref={formRef}
             >
               <input type="text" required placeholder="Name" name="name" />
               <input type="text" required placeholder="Email" name="email" />

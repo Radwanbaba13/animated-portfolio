@@ -43,6 +43,8 @@ section {
 
   @include mobile {
     &#Contact {
+      height: auto;
+      margin-bottom: 50px;
       scroll-snap-align: center;
     }
   }
