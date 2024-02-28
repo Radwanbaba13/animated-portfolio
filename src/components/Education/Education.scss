@@ -43,16 +43,16 @@
         top: calc(50% - 150px);
         left: min(calc(0% + (100vw - 1366px) / 2), calc(80vw - 30px));
         z-index: 1;
-        @include mobile {
-          width: 400px;
-          top: 15%;
-          left: 8%;
-          scale: 0.6;
-        }
         @include tablet {
           width: 400px;
           top: 25%;
           left: 30%;
+          scale: 0.6;
+        }
+        @include mobile {
+          width: 400px;
+          top: 15%;
+          left: 8%;
           scale: 0.6;
         }
       }
@@ -63,16 +63,16 @@
         left: 50%;
         transform: translateX(-50%);
         z-index: 1;
-        @include mobile {
-          width: 400px;
-          top: 45%;
-          left: 35%;
-          scale: 0.6;
-        }
         @include tablet {
           width: 400px;
           top: 45%;
           left: 45%;
+          scale: 0.6;
+        }
+        @include mobile {
+          width: 400px;
+          top: 45%;
+          left: 35%;
           scale: 0.6;
         }
       }
@@ -81,16 +81,16 @@
         top: calc(50% - 120px);
         right: min(calc(0% + (100vw - 1366px) / 2), calc(80vw - 30px));
         z-index: 1;
-        @include mobile {
-          width: 400px;
-          top: 80%;
-          right: -5%;
-          scale: 0.6;
-        }
         @include tablet {
           width: 400px;
           top: 75%;
           right: 22%;
+          scale: 0.6;
+        }
+        @include mobile {
+          width: 400px;
+          top: 80%;
+          right: -5%;
           scale: 0.6;
         }
       }

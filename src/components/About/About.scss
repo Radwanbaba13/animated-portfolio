@@ -68,6 +68,11 @@
           border-radius: 20px;
           border: 1px solid #929292;
 
+          @include tablet {
+            width: 300px;
+            padding: 10px;
+          }
+
           @include mobile {
             padding: 0px;
             margin-bottom: 5px;
