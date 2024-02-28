@@ -21,7 +21,6 @@ const variants = {
 };
 
 const Contact = () => {
-  const formRef = useRef();
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
   const [responseMessage, setResponseMessage] = useState("");
@@ -110,6 +109,11 @@ const Contact = () => {
     threshold: 0.5,
   });
 
+  const [formRef, inFormView] = useInView({
+    triggerOnce: false,
+    threshold: 0.5,
+  });
+
   return (
     <motion.div className="contact">
       <motion.div
@@ -119,7 +123,7 @@ const Contact = () => {
         whileInView="animate"
         ref={ref}
       >
-        <motion.div className="textContainer" variants={variants}>
+        <motion.div className="textContainer" variants={variants} ref={formRef}>
           <motion.h1 variants={variants}>Contact Me</motion.h1>
           <motion.div className="item" variants={variants}>
             <h2>Mail</h2>
@@ -196,50 +200,56 @@ const Contact = () => {
               </svg>
             </motion.div>
           )}
-          <motion.form
-            ref={formRef}
-            onSubmit={sendEmail}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 4, duration: 1 }}
-          >
-            <input type="text" required placeholder="Name" name="name" />
-            <input type="text" required placeholder="Email" name="email" />
-            <textarea rows={6} required placeholder="Message" name="message" />
-
-            <div className="recaptcha-container">
-              <ReCAPTCHA
-                ref={recaptchaRef}
-                sitekey="6Lc4uXkpAAAAAG4ewuSjF-DN-UfRQM58Fn9AjRF8"
-                onChange={onCaptchaChange}
+          {inFormView && (
+            <motion.form
+              onSubmit={sendEmail}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 4, duration: 1 }}
+            >
+              <input type="text" required placeholder="Name" name="name" />
+              <input type="text" required placeholder="Email" name="email" />
+              <textarea
+                rows={6}
+                required
+                placeholder="Message"
+                name="message"
               />
-            </div>
 
-            <button>Submit</button>
-            {error && (
-              <motion.div
-                className="error"
-                variants={toastVariants}
-                initial="initial"
-                animate="animate"
-                onAnimationComplete={() => setError(false)}
-              >
-                {responseMessage}
-              </motion.div>
-            )}
+              <div className="recaptcha-container">
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey="6Lc4uXkpAAAAAG4ewuSjF-DN-UfRQM58Fn9AjRF8"
+                  onChange={onCaptchaChange}
+                />
+              </div>
 
-            {success && (
-              <motion.div
-                className="success"
-                variants={toastVariants}
-                initial="initial"
-                animate="animate"
-                onAnimationComplete={() => setSuccess(false)}
-              >
-                {responseMessage}
-              </motion.div>
-            )}
-          </motion.form>
+              <button>Submit</button>
+              {error && (
+                <motion.div
+                  className="error"
+                  variants={toastVariants}
+                  initial="initial"
+                  animate="animate"
+                  onAnimationComplete={() => setError(false)}
+                >
+                  {responseMessage}
+                </motion.div>
+              )}
+
+              {success && (
+                <motion.div
+                  className="success"
+                  variants={toastVariants}
+                  initial="initial"
+                  animate="animate"
+                  onAnimationComplete={() => setSuccess(false)}
+                >
+                  {responseMessage}
+                </motion.div>
+              )}
+            </motion.form>
+          )}
         </div>
       </motion.div>
     </motion.div>
