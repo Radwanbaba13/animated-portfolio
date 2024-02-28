@@ -44,7 +44,7 @@ const Parallax = () => {
       }}
     >
       <motion.div className="sideText" animate={verticalSlideAnimation}>
-        Work
+        My Work
       </motion.div>
       <motion.h1 style={{ y: yText, opacity: textOpacity, scale: textScale }}>
         My Work
