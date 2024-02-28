@@ -11,18 +11,39 @@
 
   h1 {
     font-size: 100px;
+    z-index: 5;
+
+    @include mobile {
+      font-size: 72px;
+      text-align: center;
+    }
   }
 
-  .mountains {
-    background-image: url("/mountains.png");
-    background-size: cover;
-    background-position: bottom;
-    width: 100%;
-    height: 100%;
+  .sideText {
+    left: -3%;
+    top: 50%;
     position: absolute;
+    rotate: 90deg;
+    font-size: 200px;
+    font-weight: bold;
     z-index: 3;
+    background: -webkit-linear-gradient(
+      rgba(122, 122, 122, 0.5),
+      rgba(0, 0, 0, 0)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    user-select: none;
+
+    @include mobile {
+      font-size: 200px;
+    }
   }
-  .planets {
+
+  .circles {
+    background-image: url("/parallax-01.png");
+    top: 15%;
+    scale: 1.2;
     background-size: cover;
     background-position: bottom;
     width: 100%;
@@ -30,8 +51,10 @@
     position: absolute;
     z-index: 2;
   }
-  .stars {
-    background-image: url("/stars.png");
+  .triangles {
+    background-image: url("/parallax-0.png");
+    top: 15%;
+    scale: 1.2;
     background-size: cover;
     background-position: bottom;
     width: 100%;

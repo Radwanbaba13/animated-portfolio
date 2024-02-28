@@ -10,8 +10,36 @@ const Parallax = () => {
     offset: ["start start", "end start"],
   });
 
+  // Text Transformation
   const yText = useTransform(scrollYProgress, [0, 1], ["0%", "500%"]);
-  const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const textOpacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
+  const textScale = useTransform(scrollYProgress, [0, 1], [1, 0.1]);
+
+  // Triangle Bg Transformation
+  const bgRotate1 = useTransform(scrollYProgress, [0, 1], [0, 180]);
+
+  // Circle Bg Transformation
+  const bgRotate2 = useTransform(scrollYProgress, [0, 1], [0, -180]);
+
+  // Constant rotation animation for backgrounds
+  const rotateAnimation = {
+    rotate: [0, 360],
+    transition: {
+      repeat: Infinity,
+      duration: 10,
+      ease: "linear",
+    },
+  };
+
+  // Constant vertical motion for side text
+  const verticalSlideAnimation = {
+    x: ["-100%", "100%"],
+    transition: {
+      repeat: Infinity,
+      duration: 10,
+      ease: "linear",
+    },
+  };
 
   return (
     <div
@@ -21,16 +49,22 @@ const Parallax = () => {
         background: "linear-gradient(180deg, #0c0c1d, #111132)",
       }}
     >
-      <motion.h1 style={{ y: yText }}>My Work</motion.h1>
-      <motion.div className="mountains"></motion.div>
+      <motion.div className="sideText" animate={verticalSlideAnimation}>
+        Work
+      </motion.div>
+      <motion.h1 style={{ y: yText, opacity: textOpacity, scale: textScale }}>
+        My Work
+      </motion.h1>
       <motion.div
-        className="planets"
-        style={{
-          y: yBg,
-          backgroundImage: `url(${"/planets.png"})`,
-        }}
+        style={{ rotate: bgRotate2 }}
+        className="circles"
+        animate={rotateAnimation}
       ></motion.div>
-      <motion.div style={{ x: yBg }} className="stars"></motion.div>
+      <motion.div
+        style={{ rotate: bgRotate1 }}
+        className="triangles"
+        animate={{ ...rotateAnimation, rotate: [0, -360] }}
+      ></motion.div>
     </div>
   );
 };
