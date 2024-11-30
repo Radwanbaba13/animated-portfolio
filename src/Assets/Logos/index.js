@@ -26,3 +26,6 @@ export { default as storybook } from "./storybook-icon-svgrepo-com.svg";
 export { default as git } from "./git-icon-logo.svg";
 export { default as github } from "./github.svg";
 export { default as figma } from "./figma.svg";
+export { default as swift } from "./swift-icon.svg";
+export { default as kotlin } from "./kotlinlang-icon.svg";
+export { default as qdrant } from "./qdrantlogomark.svg";

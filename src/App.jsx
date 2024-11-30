@@ -5,7 +5,7 @@ import Home from "./components/Home/Home";
 import Navbar from "./components/Navbar/Navbar";
 import Parallax from "./components/Parallax/Parallax";
 import Portfolio from "./components/Portfolio/Portfolio";
-import Education from "./components/Education/Education";
+import Experience from "./components/Experience/Experience";
 
 const App = () => {
   return (
@@ -21,8 +21,8 @@ const App = () => {
         <Parallax />
       </section>
       <Portfolio />
-      <section id="Education">
-        <Education />
+      <section id="Experience">
+        <Experience />
       </section>
       <section id="Contact">
         <Contact />

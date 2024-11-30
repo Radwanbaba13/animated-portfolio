@@ -22,8 +22,12 @@ export const languages = [
     logo: svgs.csharp,
   },
   {
-    name: "C++",
-    logo: svgs.cplusplus,
+    name: "Kotlin",
+    logo: svgs.kotlin,
+  },
+  {
+    name: "Swift",
+    logo: svgs.swift,
   },
 ];
 export const frameworks = [
@@ -66,8 +70,8 @@ export const databases = [
     logo: svgs.mongodb,
   },
   {
-    name: "Neo4j",
-    logo: svgs.neo4j,
+    name: "Qdrant",
+    logo: svgs.qdrant,
   },
 ];
 export const machineLearning = [
